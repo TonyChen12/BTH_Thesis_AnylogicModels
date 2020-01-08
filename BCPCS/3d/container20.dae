@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema"
+         xmlns:ext="com.anylogic"
+         version="1.4.0">
+   <asset>
+      <content> Copyright (c) AnyLogic North America 2010 10/04/10 01:59:49 modo, http://www.luxology.com/ 10/04/10 01:59:49 KonteynerTEU.obj</content>
+      <up_axis>Y_UP</up_axis>
+   </asset>
+   <library_geometries>
+      <geometry id="cube6_Pts_Material_Surf-geometry" name="cube6_Pts">
+         <mesh>
+            <source id="cube6_Pts-source-position" name="position">
+               <float_array id="cube6_Pts-position-array" count="24">-9.47157 13.1372 1.28372 9.47157 13.1372 1.28372 -9.47157 33.8201 1.28372 9.47157 33.8201 1.28372 -9.47157 13.1372 48.9304 9.47157 13.1372 48.9304 -9.47157 33.8201 48.9304 9.47157 33.8201 48.9304</float_array>
+               <technique_common>
+                  <accessor count="8" source="#cube6_Pts-position-array" stride="3">
+                     <param name="X" type="float"/>
+                     <param name="Y" type="float"/>
+                     <param name="Z" type="float"/>
+                  </accessor>
+               </technique_common>
+            </source>
+            <source id="cube6_Pts_normal-source-normal" name="normal">
+               <float_array id="cube6_Pts_normal-normal-array" count="18">0.00000 0.00000 -1.00000  0.00000 -1.00000 0.00000  -1.00000 0.00000 0.00000  1.00000 0.00000 0.00000  0.00000 1.00000 0.00000  0.00000 0.00000 1.00000 </float_array>
+               <technique_common>
+                  <accessor count="6" source="#cube6_Pts_normal-normal-array" stride="3">
+                     <param name="X" type="float"/>
+                     <param name="Y" type="float"/>
+                     <param name="Z" type="float"/>
+                  </accessor>
+               </technique_common>
+            </source>
+            <source id="cube6_Pts-source-texcoord" texcoord="">
+               <float_array id="cube6_Pts-texcoord-array" count="48">1.00373 0 1.00373 0.851746 0.544402 0.851746 0.544402 0 0.506949 0.969364 0.506949 0.870389 0.066474 0.870389 0.066474 0.969364 -0.000151 0 0.544402 0 0.544402 0.851746 -0.000151 0.851746 0.544402 0 0.544402 0.851746 -0.000151 0.851746 -0.000151 0 0.506949 0.969364 0.066474 0.969364 0.066474 0.870389 0.506949 0.870389 0.544402 0 1.00373 0 1.00373 0.851746 0.544402 0.851746</float_array>
+               <technique_common>
+                  <accessor count="24" source="#cube6_Pts-texcoord-array" stride="2">
+                     <param name="S" type="float"/>
+                     <param name="T" type="float"/>
+                  </accessor>
+               </technique_common>
+            </source>
+            <vertices id="verts">
+               <input semantic="POSITION" source="#cube6_Pts-source-position"/>
+            </vertices>
+            <polylist count="6" material="Material_Surf">
+               <input offset="0" semantic="VERTEX" source="#verts"/>
+               <input offset="1"
+                      semantic="NORMAL"
+                      source="#cube6_Pts_normal-source-normal"/>
+               <input offset="2"
+                      semantic="TEXCOORD"
+                      source="#cube6_Pts-source-texcoord"
+                      set="0"/>
+               <vcount>4 4 4 4 4 4 </vcount>
+               <p>0 0 0 2 0 1 3 0 2 1 0 3 0 1 4 1 1 5 5 1 6 4 1 7 0 2 8 4 2 9 6 2 10 2 2 11 1 3 12 3 3 13 7 3 14 5 3 15 2 4 16 6 4 17 7 4 18 3 4 19 4 5 20 5 5 21 7 5 22 6 5 23 </p>
+            </polylist>
+         </mesh>
+      </geometry>
+   </library_geometries>
+   <library_effects>
+      <effect id="Material_Surf-material">
+         <profile_COMMON>
+            <newparam sid="container20_jpg-surface">
+               <surface type="2D">
+                  <init_from>container20_jpg</init_from>
+               </surface>
+            </newparam>
+            <newparam sid="container20_jpg-sampler">
+               <sampler2D>
+                  <source>container20_jpg-surface</source>
+               </sampler2D>
+            </newparam>
+            <newparam sid="creaseAngle">
+               <float>0</float>
+            </newparam>
+            <technique sid="COMMON">
+               <phong>
+                  <emission>
+                     <color>0 0 0 1</color>
+                  </emission>
+                  <specular>
+                     <color>0 0 0 1</color>
+                  </specular>
+                  <shininess>
+                     <float>119</float>
+                  </shininess>
+                  <transparency>
+                     <float>1</float>
+                  </transparency>
+                  <diffuse>
+                     <texture texture="container20_jpg-sampler"/>
+                  </diffuse>
+                  <reflective>
+                     <texture texture="container20_jpg-sampler"/>
+                  </reflective>
+               </phong>
+            </technique>
+         </profile_COMMON>
+      </effect>
+   </library_effects>
+   <library_images>
+      <image id="container20_jpg" name="container20_jpg">
+         <init_from>container20.jpg</init_from>
+      </image>
+   </library_images>
+   <library_materials>
+      <material id="Material_Surf" name="Material_Surf">
+         <instance_effect url="#Material_Surf-material"/>
+      </material>
+   </library_materials>
+   <library_visual_scenes>
+      <visual_scene id="VisualSceneNode" name="VisualScene">
+         <node id="cube6_Pts_Material_Surf" name="cube6_Pts_Material_Surf">
+            <matrix> 1.25000 0.00000 0.00000 0.00000 0.00000 1.25000 0.00000 0.00000 0.00000 0.00000 1.25000 0.00000 0.00000 0.00000 0.00000 1.00000 </matrix>
+            <instance_geometry url="#cube6_Pts_Material_Surf-geometry">
+               <bind_material>
+                  <technique_common>
+                     <instance_material symbol="Material_Surf" target="#Material_Surf"/>
+                  </technique_common>
+               </bind_material>
+            </instance_geometry>
+         </node>
+      </visual_scene>
+   </library_visual_scenes>
+   <scene>
+      <instance_visual_scene url="#VisualSceneNode"/>
+   </scene>
+</COLLADA>
